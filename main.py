@@ -61,7 +61,7 @@ PROFILE = "https://www.instagram.com/{0}"
 USERNAME = "myname"
 PASSWORD = "mypassword"
 
-Random_Wait_Times = [x/1000 for x in range(2000, 6001)]
+Random_Wait_Times = [x/1000 for x in range(1000, 2001)]
 
 Blocked_List_Exists = False
 Blocked = []
@@ -155,7 +155,7 @@ def Block(USER_LINK):
     
     Block_Confirm = Browser.find_element(By.XPATH, Block_Confirm_XPATH)
     Block_Confirm.click()
-    sleep(4)
+    sleep(1)
         
     return True
 
@@ -167,7 +167,7 @@ if Blocked_List_Exists:
 # Automation Process
 Browser.get(LINK)
 
-WebDriverWait(Browser, Standard_Wait).until(EC.presence_of_element_located((By.NAME, "password")))
+WebDriverWait(Browser, 10).until(EC.presence_of_element_located((By.NAME, "password")))
 RandWait()
 
 Username_Input_Element = Browser.find_element(By.NAME, "username")
@@ -178,7 +178,7 @@ Password_Input_Element.send_keys(PASSWORD)
 RandWait()
 
 Password_Input_Element.send_keys(Keys.ENTER)
-WebDriverWait(Browser, Standard_Wait).until(EC.presence_of_element_located((By.XPATH, Search_Button_XPATH)))
+WebDriverWait(Browser, 10).until(EC.presence_of_element_located((By.XPATH, Search_Button_XPATH)))
 RandWait()
 
 print("Press 'Ctrl + c' to stop")
