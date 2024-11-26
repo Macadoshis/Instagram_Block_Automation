@@ -53,12 +53,13 @@ Buffer_Wait_Lower = Config["Buffer_Wait_Lower"]
 Buffer_Wait_Upper = Config["Buffer_Wait_Upper"]
 
 DRIVER = ".\Driver\chromedriver.exe"
-BRAVE = r"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
+# BRAVE = r"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
+BRAVE = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
 LINK = "http://www.instagram.com"
 PROFILE = "https://www.instagram.com/{0}"
 
-USERNAME = str(input("USERNAME: "))
-PASSWORD = getpass("PASSWORD: ", '*')
+USERNAME = "myname"
+PASSWORD = "mypassword"
 
 Random_Wait_Times = [x/1000 for x in range(2000, 6001)]
 
@@ -73,6 +74,8 @@ with open('res\Accounts_To_Block.txt', 'r') as File_Obj:
 
 Counter = 0
 WaitTime = randint(Buffer_Wait_Lower, Buffer_Wait_Upper)
+
+print(WaitTime)
 
 # XPATH Vars
 with open('res\\xpath.json', 'r') as File_Obj:
@@ -134,7 +137,7 @@ def Block(USER_LINK):
     except Exception as Error:
         return "404"
     
-    if str(Follow_Button.text) == "Unblock":
+    if (str(Follow_Button.text) == "Unblock" or str(Follow_Button.text) == "Débloquer"):
         RandWait()
         return None
     
