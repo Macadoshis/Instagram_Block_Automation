@@ -191,6 +191,7 @@ for User in To_Block:
             Blocked.append(User)
 
         elif Val == True:
+            print(f"{User} blocked")
             Blocked.append(User)
             Counter += 1
             
