@@ -1,7 +1,7 @@
 {
-"Standard_Wait":10,
-"Increased_Wait":20,
-"Buffer":15,
-"Buffer_Wait_Lower":150,
-"Buffer_Wait_Upper":200
+    "Standard_Wait": 1,
+    "Increased_Wait": 5,
+    "Buffer": 15,
+    "Buffer_Wait_Lower": 15,
+    "Buffer_Wait_Upper": 20
 }
